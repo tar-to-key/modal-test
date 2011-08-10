@@ -1,0 +1,10 @@
+<div id="second">
+  <div>second</div>
+  <div>
+    <%= form_for @form , :url => {:action => "third" }, :remote => true do |f| %>
+    メモ: <%= f.text_field :memo %>
+    <%= f.hidden_field :before_partial, :value => "second" %>
+    <%= submit_tag "次へ" %>
+    <% end%>
+  </div>
+</div>

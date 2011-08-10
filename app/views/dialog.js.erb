@@ -1,0 +1,9 @@
+$("#<%= @params[@form.class.to_s.underscore][:before_partial] %>").css("display","none");
+$("#jquery-ui-dialog").append("<%= escape_javascript(render(:partial => @params[:dialog], :object => @params)) %>");
+
+$('<input>').attr({
+    type: 'hidden',
+    name: "<%= @params[@form.class.to_s.underscore][:before_partial] %>",
+    val: "<%= @params[@form.class.to_s.underscore] %>",
+}).appendTo("#<%= @params[:dialog] %>" + "-form");
+

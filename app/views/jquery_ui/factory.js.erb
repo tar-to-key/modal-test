@@ -1,0 +1,9 @@
+$("#<%= @params[:before_partial] %>").css("display","none");
+$("#jquery-ui-dialog").append("<%= escape_javascript(render(:partial => @params[:factory], :object => @params)) %>");
+
+$('<input>').attr({
+    type: 'hidden',
+    name: "<%= @params[:before_partial] %>",
+    val: "<%= @params[@params[:before_partial]] %>",
+}).appendTo("#<%= @params[:factory] %>" + "-form");
+

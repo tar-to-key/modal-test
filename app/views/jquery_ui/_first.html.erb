@@ -1,1 +1,10 @@
-<div>first<%= @ajax_count %></div>
+<div id="first">
+<div>first</div>
+<div><%= @params %></div>
+<%= form_tag({:controller=>"jquery_ui", :action=>"second"}, :remote => true, :id => "first-form") do |f| %>
+<input type="text" name="first[name]" value="">
+<input type="text" name="first[email]" value="">
+<input type="hidden" name="before_partial" value="first">
+<input type="submit" name="test" value="次へ">
+<% end%>
+</div>

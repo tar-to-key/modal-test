@@ -1,0 +1,17 @@
+<%= javascript_include_tag 'app/index' %>
+<button id="jquery-ui-dialog-opener">ダイアログを開く</button>
+
+<div id="jquery-ui-dialog" title="ダイアログ">
+  <div id="first">
+    <%= form_for @form, :url => {:action => "second" }, :remote => true do |f| %>
+    サーバー名: <%= f.text_field :name %>
+    <%= f.hidden_field :before_partial, :value => "first" %>
+    <%= submit_tag "次へ" %>
+    <% end%>
+  </div>
+</div>
+
+
+
+
+

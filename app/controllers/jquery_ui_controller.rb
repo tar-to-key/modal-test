@@ -1,11 +1,12 @@
 class JqueryUiController < ApplicationController
-  @ajax_count = 0
+  before_filter :params_set
 
   def index
   end
 
-  def first
-    @ajax_count = Time.now
-    logger.debug('test')
+  def factory
+    respond_to do |f|
+      f.js { render :template => 'jquery_ui/factory' }
+    end
   end
 end

@@ -1,23 +1,17 @@
-<%= javascript_include_tag :defaults %>
-
-<%= javascript_include_tag 'jquery-ui' %>
 <%= javascript_include_tag 'app/index' %>
-
-<%= stylesheet_link_tag 'jquery-ui-1.8.14.custom' %>
-
 <button id="jquery-ui-dialog-opener">ダイアログを開く</button>
-<div id="jquery-ui-dialog" title="ダイアログ">
-  <%= link_to "次へ",{:action=>:first}, :remote=>true  %>
+
+<div id="jquery-ui-dialog" title="ダイアログooo">
+  <div id="default-form">
+  <%= form_tag({:controller=>"jquery_ui", :action=>"first"}, :remote => true) do |f| %>
+  サーバー名: <input type="text" name="default-form[name]" value="">
+  <input type="hidden" name="before_partial" value="default-form">
+  <input type="submit" name="test" value="次へ">
+  <% end%>
+  </div>
 </div>
 
 
 
-
-
-<!-- <form class="button_to" data-remote="true" action="/jquery_ui/first" method="post"> -->
-<!--   <div> -->
-<!--     <input class="ooo" type="submit" value="次へ"> -->
-<!--   </div> -->
-<!-- </form> -->
 
 
